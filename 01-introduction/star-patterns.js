@@ -47,11 +47,9 @@ function starPatternReturn(n) {
 
 // console.log(starPatternReturn(5));
 
-
 // ======================================================
 // Pattern Printing Practice
 // ======================================================
-
 
 // ======================================================
 // 1. Square Star Pattern (Print)
@@ -73,7 +71,6 @@ function printSquareStarPattern(n) {
 // printSquareStarPattern(5);
 
 console.log("----------------");
-
 
 // ======================================================
 // 2. Square Star Pattern (Return)
@@ -98,7 +95,6 @@ function getSquareStarPattern(n) {
 
 // console.log(getSquareStarPattern(5));
 
-
 // ======================================================
 // 3. Right Triangle Star Pattern
 // Returns a right-angled triangle using stars.
@@ -122,7 +118,6 @@ function getRightTriangleStarPattern(n) {
 
 // console.log(getRightTriangleStarPattern(5));
 
-
 // ======================================================
 // 4. Increasing Number Triangle
 // Returns a triangle with numbers from 1 to each row.
@@ -145,7 +140,6 @@ function getIncreasingNumberTriangle(n) {
 }
 
 // console.log(getIncreasingNumberTriangle(5));
-
 
 // ======================================================
 // 5. Repeated Number Triangle
@@ -171,7 +165,6 @@ function getRepeatedNumberTriangle(n) {
 
 // console.log(getRepeatedNumberTriangle(5));
 
-
 // ======================================================
 // 6. Inverted Number Triangle
 // Returns an inverted triangle with increasing numbers.
@@ -195,7 +188,6 @@ function getInvertedNumberTriangle(n) {
 
 // console.log(getInvertedNumberTriangle(5));
 
-
 // ======================================================
 // 7. Inverted Star Triangle
 // Returns an inverted triangle using stars.
@@ -218,3 +210,83 @@ function getInvertedStarTriangle(n) {
 }
 
 // console.log(getInvertedStarTriangle(5));
+
+// ======================================================
+// 8. Right-Aligned Star Triangle
+// Returns a right-aligned triangle using stars.
+// ======================================================
+
+function getRightAlignedStarTriangle(n) {
+  let pattern = "";
+
+  for (let i = 0; i < n; i++) {
+    let row = "";
+
+    for (let j = 0; j < n - (i + 1); j++) {
+      row += " ";
+    }
+
+    for (let k = 0; k < i + 1; k++) {
+      row += "*";
+    }
+
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+// console.log(getRightAlignedStarTriangle(5));
+
+
+// ======================================================
+// 9. Binary Number Triangle (0-1 Triangle)
+// Returns a triangle alternating between 1 and 0 on each row.
+// ======================================================
+
+function getBinaryNumberTriangle(n) {
+  let pattern = "";
+
+  for (let i = 0; i < n; i++) {
+    let toggle = 1;
+    let row = "";
+
+    for (let j = 0; j <= i; j++) {
+      row += toggle;
+      toggle = toggle === 1 ? 0 : 1;
+    }
+
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+// console.log(getBinaryNumberTriangle(5));
+
+// ======================================================
+// 10. Continuous Binary Number Triangle
+// Returns a triangle where 1s and 0s alternate continuously
+// across rows without resetting on each line.
+// ======================================================
+
+function getContinuousBinaryTriangle(n) {
+  let pattern = "";
+  let toggle = 1;
+
+  for (let i = 0; i < n; i++) {
+    let row = "";
+
+    for (let j = 0; j <= i; j++) {
+      row += toggle;
+      toggle = toggle === 1 ? 0 : 1;
+    }
+
+    pattern += row + "\n";
+  }
+
+  return pattern;
+}
+
+console.log(getContinuousBinaryTriangle(5));
+
